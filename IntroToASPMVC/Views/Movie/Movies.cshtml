@@ -1,0 +1,29 @@
+﻿@model MovieViewModel
+
+<h1>Movies:</h1>
+<button class="btn btn-primary"><a class="text-white" asp-area="" asp-controller="Movie" asp-action="Create">Add Movie</a></button>
+
+@{
+    if (Model.Movies.Count <= 0)
+    {
+        <p>Er zijn geen films.</p>
+    }
+    else
+    {
+        
+            <table>
+                @foreach (var movie in Model.Movies)
+                {
+                <tr>
+                    <td><h4 style="color:cornflowerblue"> @movie.Title</h4></td>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Detail" asp-route-id="@movie.Id">Detail</a></td>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Edit" asp-route-id="@movie.Id">Edit</a></td>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Delete" asp-route-id="@movie.Id">Delete</a></td>
+                </tr>}
+            </table>
+
+
+        
+    }
+
+}

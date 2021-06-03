@@ -1,0 +1,25 @@
+﻿@model MovieDetailViewModel
+
+<h3 style="color:cornflowerblue">@Model.Title</h3>
+<p>Description: @Model.Description</p>
+<p>Rating: @Model.Rating/10</p>
+<p>Year of release: @{
+    string result;
+    
+    if(Model.YearOfRelease > DateTime.Now)
+    {
+        var releaseDate = Model.YearOfRelease - DateTime.Now;
+        result = $"De film wordt beschikbaar in {releaseDate.Days} dagen.";
+    }
+    else
+    {
+        var releaseDate =  Model.YearOfRelease;
+        result = releaseDate.Year.ToString();
+    }
+    }  @result</p>
+
+
+<p>Genres:</p>
+<ul>
+     <li>@Model.Genre</li>    
+</ul>

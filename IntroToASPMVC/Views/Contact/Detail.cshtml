@@ -1,0 +1,21 @@
+﻿@model ContactDetailViewModel
+
+<p><img src="@Model.ProfilePictureUrl" alt="profile picture" /></p>
+<h3 style="color:cornflowerblue">@Model.FirstName @Model.Name</h3>
+<p>Street: @Model.Street</p>
+<p>House Number: @Model.HouseNumber</p>
+<p>Unit: @Model.Unit</p>
+<p>Postal Code: @Model.PostalCode</p>
+<p>City: @Model.City</p>
+<p>E-mail: @Model.Email</p>
+<p>Telephone Number: @Model.TelephoneNumber</p>
+<p>Type of Contact: @Model.Category</p>
+
+
+<p>
+    Age: @{
+        //calculate age
+        var result = DateTime.Now - @Model.DateOfBirth ;
+        var age = result.TotalDays / 365.25;
+        }  @Math.Ceiling(age)
+</p>

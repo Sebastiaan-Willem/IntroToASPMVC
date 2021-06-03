@@ -1,0 +1,71 @@
+﻿@model ContactCreateViewModel
+
+<form asp-controller="Contact" asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input class="form-control" asp-for="FirstName" />
+        <span class="text-danger" asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProfilePictureUrl"></label>
+        <input class="form-control" asp-for="ProfilePictureUrl" />
+        <span class="text-danger" asp-validation-for="ProfilePictureUrl"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateOfBirth"></label>
+        <input class="form-control" type="date" asp-for="DateOfBirth" />
+        <span class="text-danger" asp-validation-for="DateOfBirth"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input class="form-control" asp-for="Email" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TelephoneNumber"></label>
+        <input class="form-control" asp-for="TelephoneNumber" />
+        <span class="text-danger" asp-validation-for="TelephoneNumber"></span>
+    </div>
+    <div class="form-group">
+        <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()">
+            <option selected="selected" value="value">Please select a category</option>
+        </select>
+        <span class="text-danger" asp-validation-for="Category"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PostalCode"></label>
+        <input class="form-control" asp-for="PostalCode" />
+        <span class="text-danger" asp-validation-for="PostalCode"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City"></label>
+        <input class="form-control" asp-for="City" />
+        <span class="text-danger" asp-validation-for="City"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Street"></label>
+        <input class="form-control" asp-for="Street" />
+        <span class="text-danger" asp-validation-for="Street"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="HouseNumber"></label>
+        <input class="form-control" asp-for="HouseNumber" />
+        <span class="text-danger" asp-validation-for="HouseNumber"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Unit"></label>
+        <input class="form-control" asp-for="Unit" />
+        <span class="text-danger" asp-validation-for="Unit"></span>
+    </div>
+
+    <button class="btn-primary" type="submit">Add Contact</button>
+
+</form>
